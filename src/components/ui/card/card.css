@@ -1,0 +1,40 @@
+/* Analytics Card */
+.analytics-card {
+  height: 200px;
+  border-radius: 8px;
+  padding: 20px;
+  border: 1px solid var(--border);
+}
+
+.analytics-card .icon-background {
+  background: #eff4ff;
+  border-radius: 8px;
+  padding: 5px 10px 1px 10px;
+  margin-bottom: 10px;
+  width: fit-content;
+}
+
+.analytics-card .icon-background svg {
+  width: 30px;
+}
+
+.analytics-card .text-rate {
+  display: flex;
+  align-items: center;
+}
+
+.analytics-card .text-rate span {
+  margin-right: 10px;
+}
+
+.analytics-card .value h1 {
+  margin: 10px 0;
+  font-size: var(--medium-heading1);
+  font-weight: 400;
+}
+
+.analytics-card .description {
+  color: #98a2b3;
+  font-weight: 300;
+  font-size: var(--small-paragraph);
+}

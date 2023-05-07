@@ -1,0 +1,228 @@
+.dashboard {
+  padding: 70px 50px;
+}
+
+.dashboard .dashboard-section {
+  margin-bottom: 30px;
+}
+
+.dashboard-user {
+  display: flex;
+  align-items: center;
+  border-bottom: 1px solid var(--border);
+  padding-bottom: 20px;
+}
+
+.dashboard-user .left {
+  margin-right: 20px;
+}
+
+.dashboard-user .right h3 {
+  font-weight: 600;
+  font-size: var(--mini-heading1);
+  margin: 0;
+}
+
+.dashboard-user .right p {
+  font-weight: 300;
+  font-size: var(--small-paragraph);
+  margin: 5px;
+  color: var(--dim-text);
+}
+
+.dashboard-cards-grid,
+.dashboard-section-3 {
+  display: grid;
+  grid-template-columns: repeat(20, minmax(0, 1fr));
+  grid-gap: 20px;
+}
+
+/* dashboard cards */
+.dashboard-cards-grid .grid-child-1 {
+  grid-area: 1 / 1 / span 5 / span 5;
+}
+
+.dashboard-cards-grid .grid-child-2 {
+  grid-area: 1 / 6 / span 5 / span 5;
+}
+
+.dashboard-cards-grid .grid-child-3 {
+  grid-area: 1 / 11 / span 5 / span 5;
+}
+
+.dashboard-cards-grid .grid-child-4 {
+  grid-area: 1 / 16 / span 5 / span 5;
+}
+
+/* dashboard tables */
+.dashboard-section-3 .dashboard-diagnosis-report {
+  grid-area: 1 / 1 / span 10 / span 12;
+}
+
+.dashboard-section-3 .dashboard-activity-log {
+  grid-area: 1 / 13 / span 10 / span 8;
+}
+
+.dashboard-section-3 .dashboard-diagnosis-report,
+.dashboard-section-3 .dashboard-activity-log {
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  padding-bottom: 20px;
+}
+
+.dashboard-section-3 .table-description {
+  margin-left: 20px;
+}
+
+/* activity log */
+.dashboard-activity-log .activity-content {
+  border-top: 1px solid var(--border);
+  padding: 10px 20px;
+}
+
+.activity-card {
+  display: flex;
+  justify-content: space-between;
+  border-bottom: 1px solid var(--border);
+  margin-top: 20px;
+  padding-bottom: 10px;
+}
+
+.activity-card .left {
+  display: flex;
+}
+
+.activity-card .left .name-comment {
+  margin-left: 10px;
+}
+
+.activity-card .left .name-comment h3 {
+  font-size: var(--medium-paragraph);
+  font-weight: 600;
+  margin: 0;
+}
+
+.activity-card .left .name-comment p {
+  color: var(--dim-text);
+  font-weight: 400;
+  font-size: var(--small-paragraph);
+  margin: 3px 0 0 0;
+}
+
+@media (max-width: 80rem) {
+  .dashboard {
+    padding: 70px 20px;
+  }
+
+  .dashboard-cards-grid {
+    grid-template-columns: repeat(15, minmax(0, 1fr));
+  }
+
+  .dashboard-cards-grid .grid-child-1 {
+    grid-area: 1 / 1 / span 5 / span 5;
+  }
+
+  .dashboard-cards-grid .grid-child-2 {
+    grid-area: 1 / 6 / span 5 / span 5;
+  }
+
+  .dashboard-cards-grid .grid-child-3 {
+    grid-area: 1 / 11 / span 5 / span 5;
+  }
+
+  .dashboard-cards-grid .grid-child-4 {
+    grid-area: 6 / 1 / span 5 / span 5;
+  }
+
+  .dashboard-section-3 {
+    grid-template-columns: repeat(5, minmax(0, 1fr));
+  }
+
+  .dashboard-section-3 .dashboard-diagnosis-report {
+    grid-area: 1 / 1 / span 10 / span 5;
+  }
+
+  .dashboard-section-3 .dashboard-activity-log {
+    grid-area: 11 / 1 / span 10 / span 5;
+  }
+}
+
+@media (max-width: 50rem) {
+  .dashboard-cards-grid {
+    grid-template-columns: repeat(10, minmax(0, 1fr));
+  }
+
+  .dashboard-cards-grid .grid-child-1 {
+    grid-area: 1 / 1 / span 5 / span 5;
+  }
+
+  .dashboard-cards-grid .grid-child-2 {
+    grid-area: 1 / 6 / span 5 / span 5;
+  }
+
+  .dashboard-cards-grid .grid-child-3 {
+    grid-area: 6 / 1 / span 5 / span 5;
+  }
+
+  .dashboard-cards-grid .grid-child-4 {
+    grid-area: 6 / 6 / span 5 / span 5;
+  }
+}
+
+@media (max-width: 30rem) {
+  .dashboard-cards-grid {
+    grid-gap: 10px;
+  }
+
+  .dashboard-section-3 {
+    grid-gap: 30px;
+  }
+
+  .dashboard-activity-log .activity-content {
+    padding: 10px;
+  }
+
+  .activity-card {
+    flex-direction: column;
+  }
+
+  .activity-card .left {
+    margin-bottom: 10px;
+  }
+
+  .activity-card .left .name-comment h3 {
+    font-size: var(--small-paragraph);
+  }
+
+  .activity-card .left .name-comment p {
+    font-size: var(--mini-paragraph);
+  }
+}
+
+@media (max-width: 25rem) {
+  .dashboard-cards-grid {
+    grid-template-columns: repeat(5, minmax(0, 1fr));
+  }
+
+  .dashboard-cards-grid .grid-child-1 {
+    grid-area: 1 / 1 / span 5 / span 5;
+  }
+
+  .dashboard-cards-grid .grid-child-2 {
+    grid-area: 6 / 1 / span 5 / span 5;
+  }
+
+  .dashboard-cards-grid .grid-child-3 {
+    grid-area: 11 / 1 / span 5 / span 5;
+  }
+
+  .dashboard-cards-grid .grid-child-4 {
+    grid-area: 16 / 1 / span 5 / span 5;
+  }
+}
+
+@media (max-width: 23rem) {
+  .dashboard {
+    padding: 70px 10px;
+  }
+}

@@ -1,0 +1,72 @@
+.modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 9;
+}
+
+.modal-background {
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  background-color: transparent;
+}
+
+/* PopModal */
+.pop-modal .modal-background {
+  background-color: var(--modal-background);
+  position: absolute;
+  height: 100%;
+  width: 100%;
+}
+
+.pop-modal .modal-card {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  border-radius: 5px;
+  transform: translate(-50%, -50%) scale(0.7, 0.7);
+  transition: all 0.2s ease;
+}
+
+.pop-modal .modal-card.scroll {
+  overflow-y: scroll;
+}
+
+.pop-modal .modal-card.scroll::-webkit-scrollbar {
+  width: 7px;
+  height: 7px;
+}
+
+.pop-modal .modal-card.scroll::-webkit-scrollbar-thumb {
+  background-color: #cccccc;
+  border-radius: 20px;
+}
+
+.pop-modal .modal-card.show {
+  transform: translate(-50%, -50%) scale(1, 1);
+}
+
+.pop-modal .modal-header {
+  padding: 10px;
+}
+
+.pop-modal .modal-header p {
+  margin: 0;
+}
+
+.pop-modal .modal-header img {
+  width: 10px;
+  cursor: pointer;
+}
+
+@media (max-width: 60rem) {
+  .pop-modal {
+    left: 0;
+  }
+  .pop-modal .modal-card {
+    width: 80%;
+  }
+}

@@ -1,0 +1,17 @@
+.status-wrapper p.pill {
+  padding: 5px 12px;
+  margin: 0;
+  width: max-content;
+  border-radius: 40px;
+  display: flex;
+  align-items: center;
+  font-size: var(--mini-paragraph);
+}
+
+.status-wrapper p.block {
+  padding: 5px 12px;
+  margin: 0;
+  width: max-content;
+  border-radius: 3px;
+  font-size: var(--mini-paragraph);
+}

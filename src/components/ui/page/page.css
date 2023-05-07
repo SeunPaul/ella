@@ -1,0 +1,86 @@
+.images-upload {
+  display: flex;
+  flex-wrap: wrap;
+  background-color: var(--white);
+  margin-top: 20px;
+  height: max-content;
+  border-radius: 4px;
+}
+
+.images-upload .img {
+  position: relative;
+  height: 400px;
+  width: 400px;
+  border-radius: 10px;
+  background-size: cover;
+  cursor: pointer;
+  isolation: isolate;
+}
+
+.images-upload .img:hover::before {
+  content: "";
+  background-image: url("../../../assets/icons/deleteIcon.svg");
+  background-repeat: no-repeat;
+  background-position: center;
+  position: absolute;
+  height: 400px;
+  width: 400px;
+}
+
+.images-upload .img:hover::after {
+  content: "";
+  position: absolute;
+  height: 400px;
+  width: 400px;
+  border-radius: 10px;
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: -1;
+}
+
+.images-upload .add-img {
+  border: 1px dashed var(--modal-background);
+  border-radius: 4px;
+  height: 400px;
+  width: 400px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  box-sizing: border-box;
+  cursor: pointer;
+}
+
+.images-upload .add-img img {
+  width: 50px;
+}
+
+.images-upload .add-img p {
+  font-size: var(--small-paragraph);
+}
+
+@media (max-width: 35rem) {
+  .images-upload .img {
+    width: 230px;
+    height: 230px;
+  }
+  .images-upload .img:hover::before {
+    width: 230px;
+    height: 230px;
+  }
+  .images-upload .img:hover::after {
+    width: 230px;
+    height: 230px;
+  }
+  .images-upload .add-img {
+    width: 230px;
+    height: 230px;
+  }
+  .images-upload .add-img img {
+    width: 30px;
+    margin-top: 10px;
+  }
+  .images-upload .add-img p {
+    font-size: var(--mini-paragraph);
+  }
+}
