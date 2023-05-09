@@ -26,7 +26,7 @@ function Router() {
 
   const routes = [
     {
-      path: "/login",
+      path: "/",
       component: Login,
       meta: {
         protectedRoute: false,
@@ -76,7 +76,7 @@ function Router() {
               <Route
                 key={route.path}
                 path={route.path}
-                element={<Redirect redirectUrl="/login" />}
+                element={<Redirect redirectUrl="/" />}
               />
             );
           }
