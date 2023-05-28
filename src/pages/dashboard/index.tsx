@@ -1,3 +1,4 @@
+import Navigation from "./components/Navigation";
 import DashboardUser from "./components/DashboardUser";
 import DashboardCards from "./components/DashboardCards";
 import DashboardDiagnosisReport from "./components/DashboardDiagnosisReport";
@@ -7,6 +8,9 @@ import "./dashboard.css";
 function Dashboard() {
   return (
     <div className="dashboard">
+      <div>
+        <Navigation />
+      </div>
       <div className="dashboard-section dashboard-section-1">
         <DashboardUser />
       </div>

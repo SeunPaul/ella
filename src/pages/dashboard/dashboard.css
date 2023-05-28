@@ -1,5 +1,35 @@
 .dashboard {
-  padding: 70px 50px;
+  padding: 120px 50px 70px 50px;
+}
+
+.dashboard .navigation {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  padding: 20px 50px;
+  display: flex;
+  justify-content: space-between;
+  background-color: #fff;
+  box-shadow: 1px 1px 8px #cfcfcf;
+}
+
+.dashboard .navigation button {
+  height: 40px;
+  width: 150px;
+  margin-left: 10px;
+  background-color: #155eef;
+  border: 1px solid #155eef;
+  outline: none;
+  color: #fff;
+  font-family: "Syne", sans-serif;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.dashboard .navigation button:last-child {
+  background-color: transparent;
+  color: #155eef;
 }
 
 .dashboard .dashboard-section {

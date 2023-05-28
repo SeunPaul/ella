@@ -1,6 +1,7 @@
-// import { useState } from "react";
+import { useContext } from "react";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { Toaster } from "react-hot-toast";
+import { AppContext } from "../AppContext";
 
 // pages
 import Login from "../pages/login";
@@ -14,15 +15,8 @@ import Redirect from "./Redirect";
 // scroll
 import ScrollToTop from "../components/utils/ScrollToTop";
 
-// type UserType = {
-//   email: string;
-//   name: string;
-//   loggedIn: boolean;
-// }
-
 function Router() {
-  // const [user, setUser] = usueState({})
-  const loggedIn = sessionStorage.getItem("loggedIn");
+  const appData = useContext(AppContext);
 
   const routes = [
     {
@@ -61,7 +55,7 @@ function Router() {
       <Toaster />
       <Routes>
         {routes.map((route) => {
-          if (route.meta.protectedRoute && loggedIn) {
+          if (route.meta.protectedRoute && appData?.user.loggedIn) {
             return (
               <Route
                 key={route.path}
@@ -71,7 +65,7 @@ function Router() {
             );
           }
 
-          if (route.meta.protectedRoute && !loggedIn) {
+          if (route.meta.protectedRoute && !appData?.user.loggedIn) {
             return (
               <Route
                 key={route.path}
