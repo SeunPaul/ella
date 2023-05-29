@@ -19,13 +19,17 @@ function Navigation() {
     }
   };
 
+  const goHome = () => {
+    navigate("/dashboard");
+  };
+
   const runAnalysis = () => {
     navigate("/dashboard/analyse");
   };
 
   return (
     <div className="navigation">
-      <div className="logo">
+      <div className="logo" onClick={() => goHome()}>
         <img src={logo} alt="" />
       </div>
       <div className="run-analysis">

@@ -46,6 +46,10 @@
   font-weight: 400;
 }
 
+.analyse-wrapper .scan-modal img {
+  width: 200px;
+}
+
 .analyse-wrapper .result-modal {
   text-align: center;
   background-color: var(--white);

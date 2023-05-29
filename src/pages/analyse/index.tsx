@@ -1,4 +1,5 @@
 import { useState } from "react";
+import Navigation from "../dashboard/components/Navigation";
 import AnalyseUser from "./components/AnalyseUser";
 import AnalyseByValue from "./components/AnalyseByValue";
 import AnalyseByMammogram from "./components/AnalyseByMammogram";
@@ -9,6 +10,9 @@ function Analyse() {
   const [page, setPage] = useState("value");
   return (
     <div className="dashboard">
+      <div>
+        <Navigation />
+      </div>
       <div className="dashboard-section dashboard-section-1">
         <AnalyseUser />
       </div>

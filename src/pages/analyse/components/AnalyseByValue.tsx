@@ -7,20 +7,43 @@ import FormButton from "../../../components/form/formButton/FormButton";
 import Button from "../../../components/ui/button/Button";
 import scan from "../../../assets/images/scan.gif";
 import note from "../../../assets/icons/note.svg";
+import notify from "../../../utils/notify";
 
 function AnalyseByValue() {
   const [submitting, setSubmitting] = useState(false);
-  const [showResult, setShowResult] = useState(false);
+  const [showResult, setShowResult] = useState("");
   const { register, handleSubmit, formState } = useForm();
 
   const navigate = useNavigate();
 
-  const onAnalyse: SubmitHandler<FieldValues> = () => {
+  const onAnalyse: SubmitHandler<FieldValues> = (data) => {
     setSubmitting(true);
-    setTimeout(() => {
-      setSubmitting(false);
-      setShowResult(true);
-    }, 5000);
+    const formData = {
+      radius_mean: Number(data.mdcp),
+      texture_mean: Number(data.sdg),
+      perimeter_mean: Number(data.mst),
+      area_mean: Number(data.mat),
+      smoothness_mean: Number(data.mvr),
+      concavity_mean: Number(data.msc),
+      "concave points_mean": Number(data.mnc),
+    };
+
+    fetch("http://127.0.0.1:8000/v1/api/result/", {
+      method: "post",
+      body: JSON.stringify(formData),
+      headers: {
+        "Content-Type": "application/json",
+      },
+    })
+      .then((res) => res.json())
+      .then(async (resData) => {
+        setShowResult(resData.Result);
+        setSubmitting(false);
+      })
+      .catch(() => {
+        notify("error", "An error occured from the AI model");
+        setSubmitting(false);
+      });
   };
 
   return (
@@ -39,13 +62,14 @@ function AnalyseByValue() {
           <div className="result-modal">
             <img src={note} alt="" />
             <h2>Test Diagnosis</h2>
-            <p>patient has been diagnosed with Malignant Cancer.</p>
+            <p>patient has been diagnosed with {showResult} Cancer.</p>
             <Button
               text="Ok"
               type="contained"
               color="#fff"
               backgroundColor="#155eef"
               onClick={() => {
+                // setShowResult("");
                 navigate("/dashboard");
               }}
               big

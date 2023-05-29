@@ -12,6 +12,11 @@
   justify-content: space-between;
   background-color: #fff;
   box-shadow: 1px 1px 8px #cfcfcf;
+  z-index: 10;
+}
+
+.dashboard .navigation .logo {
+  cursor: pointer;
 }
 
 .dashboard .navigation button {
@@ -141,7 +146,7 @@
 
 @media (max-width: 80rem) {
   .dashboard {
-    padding: 70px 20px;
+    padding: 120px 20px 70px 20px;
   }
 
   .dashboard-cards-grid {
