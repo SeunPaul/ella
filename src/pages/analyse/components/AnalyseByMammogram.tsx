@@ -14,7 +14,7 @@ import notify from "../../../utils/notify";
 function AnalyseByMammogram() {
   const [submitting, setSubmitting] = useState(false);
   const [image, setImage] = useState<ImageType | null>(null);
-  const [showResult, setShowResult] = useState(false);
+  const [showResult, setShowResult] = useState("");
   const { register, handleSubmit, formState } = useForm();
 
   const navigate = useNavigate();
@@ -24,10 +24,23 @@ function AnalyseByMammogram() {
       notify("error", "Please upload an image");
     } else {
       setSubmitting(true);
-      setTimeout(() => {
-        setSubmitting(false);
-        setShowResult(true);
-      }, 5000);
+      const formData = new FormData();
+
+      formData.append("picture", image.file);
+
+      fetch("http://127.0.0.1:8500/api/upload", {
+        method: "post",
+        body: formData,
+      })
+        .then((res) => res.json())
+        .then(async (resData) => {
+          setShowResult(resData.report);
+          setSubmitting(false);
+        })
+        .catch(() => {
+          notify("error", "An error occured from the AI model");
+          setSubmitting(false);
+        });
     }
   };
 
@@ -47,7 +60,7 @@ function AnalyseByMammogram() {
           <div className="result-modal">
             <img src={note} alt="" />
             <h2>Test Diagnosis</h2>
-            <p>patient has been diagnosed with Malignant Cancer.</p>
+            <p>{showResult}</p>
             <Button
               text="Ok"
               type="contained"

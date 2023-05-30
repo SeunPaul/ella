@@ -37,6 +37,7 @@ function FormInput({
         <input
           className={color === "white" ? "transparent" : ""}
           type={type === "password" && showPassword ? "text" : type}
+          step="any"
           placeholder={placeholder}
           defaultValue={defaultValue}
           disabled={disabled}
