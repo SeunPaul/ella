@@ -11,7 +11,7 @@ function Analyse() {
   return (
     <div className="dashboard">
       <div>
-        <Navigation />
+        <Navigation page="analyze" />
       </div>
       <div className="dashboard-section dashboard-section-1">
         <AnalyseUser />

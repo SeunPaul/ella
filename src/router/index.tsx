@@ -4,6 +4,7 @@ import { Toaster } from "react-hot-toast";
 import { AppContext } from "../AppContext";
 
 // pages
+import Home from "../pages/home/Home";
 import Login from "../pages/login";
 import Dashboard from "../pages/dashboard";
 import Analyse from "../pages/analyse";
@@ -21,6 +22,13 @@ function Router() {
   const routes = [
     {
       path: "/",
+      component: Home,
+      meta: {
+        protectedRoute: false,
+      },
+    },
+    {
+      path: "/login",
       component: Login,
       meta: {
         protectedRoute: false,

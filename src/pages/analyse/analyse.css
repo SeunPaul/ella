@@ -51,12 +51,12 @@
 }
 
 .analyse-wrapper .result-modal {
-  text-align: center;
   background-color: var(--white);
   padding: 40px;
   display: flex;
   flex-direction: column;
   align-items: center;
+  width: 600px;
 }
 
 .analyse-wrapper .result-modal img {
@@ -64,7 +64,7 @@
 }
 
 .analyse-wrapper .result-modal p {
-  width: 300px;
+  width: 600px;
   margin-top: 0;
 }
 

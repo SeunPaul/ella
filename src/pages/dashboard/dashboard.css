@@ -2,12 +2,12 @@
   padding: 120px 50px 70px 50px;
 }
 
-.dashboard .navigation {
+.navigation {
   position: fixed;
   top: 0;
   left: 0;
   right: 0;
-  padding: 20px 50px;
+  padding: 20px 50px 10px 50px;
   display: flex;
   justify-content: space-between;
   background-color: #fff;
@@ -15,11 +15,14 @@
   z-index: 10;
 }
 
-.dashboard .navigation .logo {
+.navigation .logo {
   cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 10px;
 }
 
-.dashboard .navigation button {
+.navigation button {
   height: 40px;
   width: 150px;
   margin-left: 10px;
@@ -32,7 +35,7 @@
   cursor: pointer;
 }
 
-.dashboard .navigation button:last-child {
+.navigation button:last-child {
   background-color: transparent;
   color: #155eef;
 }

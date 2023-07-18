@@ -15,7 +15,7 @@ function PageLeft({ onLogin, formLoading }: PropType) {
     <div className="onboarding-page-left">
       <div className="onboarding-left-section1">
         <img src={logo} alt="" />
-        <h1>DIGI HEALTH</h1>
+        <h1>DigiHealth</h1>
       </div>
       <div className="onboarding-left-section2">
         <h1>Welcome Back</h1>

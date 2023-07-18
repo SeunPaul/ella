@@ -8,6 +8,7 @@ import Button from "../../../components/ui/button/Button";
 import scan from "../../../assets/images/scan.gif";
 import note from "../../../assets/icons/note.svg";
 import notify from "../../../utils/notify";
+import { Benign, Malignant } from "./Result";
 
 function AnalyseByValue() {
   const [submitting, setSubmitting] = useState(false);
@@ -58,11 +59,13 @@ function AnalyseByValue() {
         </PopModal>
       )}
       {showResult && (
-        <PopModal>
+        <PopModal scroll>
           <div className="result-modal">
             <img src={note} alt="" />
             <h2>Test Diagnosis</h2>
             <p>patient has been diagnosed with {showResult} Cancer.</p>
+            {showResult === "Benign" && <Benign />}
+            {showResult === "Malignant" && <Malignant />}
             <Button
               text="Ok"
               type="contained"

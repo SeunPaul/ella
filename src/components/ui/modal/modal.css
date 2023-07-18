@@ -24,9 +24,10 @@
 
 .pop-modal .modal-card {
   position: absolute;
-  top: 50%;
+  top: 55%;
   left: 50%;
   border-radius: 5px;
+  height: 500px;
   transform: translate(-50%, -50%) scale(0.7, 0.7);
   transition: all 0.2s ease;
 }

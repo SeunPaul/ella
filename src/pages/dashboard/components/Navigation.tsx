@@ -3,8 +3,9 @@ import { useNavigate } from "react-router-dom";
 import { AppContext } from "../../../AppContext";
 import logo from "../../../assets/icons/logo.svg";
 import notify from "../../../utils/notify";
+import "../dashboard.css";
 
-function Navigation() {
+function Navigation({ page }: { page: string }) {
   const navigate = useNavigate();
   const appData = useContext(AppContext);
   const onLogout = () => {
@@ -19,7 +20,7 @@ function Navigation() {
     }
   };
 
-  const goHome = () => {
+  const goToDashboard = () => {
     navigate("/dashboard");
   };
 
@@ -27,19 +28,33 @@ function Navigation() {
     navigate("/dashboard/analyse");
   };
 
+  const goToLogin = () => {
+    navigate("/login");
+  };
+
   return (
     <div className="navigation">
-      <div className="logo" onClick={() => goHome()}>
+      <div className="logo" onClick={() => goToDashboard()}>
         <img src={logo} alt="" />
+        <h3>DigiHealth</h3>
       </div>
-      <div className="run-analysis">
-        <button type="button" onClick={() => runAnalysis()}>
-          Run Test Analysis
-        </button>
-        <button type="button" onClick={() => onLogout()}>
-          Logout
-        </button>
-      </div>
+      {page === "home" ? (
+        <div className="run-analysis">
+          <div />
+          <button type="button" onClick={() => goToLogin()}>
+            Get Started
+          </button>
+        </div>
+      ) : (
+        <div className="run-analysis">
+          <button type="button" onClick={() => runAnalysis()}>
+            Run Test Analysis
+          </button>
+          <button type="button" onClick={() => onLogout()}>
+            Logout
+          </button>
+        </div>
+      )}
     </div>
   );
 }

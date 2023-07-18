@@ -1,0 +1,96 @@
+.home {
+  padding-top: 100px;
+}
+
+.home .section-1 {
+  text-align: center;
+}
+
+.home .section-1 h1 {
+  font-size: 45px;
+  line-height: 30px;
+}
+
+.home .section-1 p {
+  max-width: 800px;
+  margin: auto;
+}
+
+.home .section-2,
+.home .section-4 {
+  display: flex;
+  justify-content: center;
+}
+
+.home .section-2 img {
+  width: 90%;
+}
+
+.home .section-3 {
+  display: flex;
+  justify-content: center;
+  gap: 50px;
+}
+
+.home .section-3 h2,
+.home .section-3 h4 {
+  font-weight: 800;
+}
+
+.home .section-3 p {
+  width: 500px;
+  font-weight: 200;
+  margin-bottom: 40px;
+}
+
+.home .section-4 img {
+  width: 80%;
+}
+
+.home .section-5 {
+  margin-top: 80px;
+  margin-left: 100px;
+}
+
+.home .section-5 p {
+  width: 700px;
+}
+
+.home .section-6 {
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+  margin-top: 50px;
+}
+
+.home .section-6 h3 {
+  margin-top: 50px;
+}
+
+.home .section-6 p {
+  width: 500px;
+}
+
+.home .section-6 img {
+  width: 500px;
+}
+
+.footer {
+  background-color: #f9fafb;
+  color: #8b92a3;
+  padding: 60px 70px;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+}
+
+.footer .group1 {
+  display: flex;
+  align-items: center;
+}
+
+.footer .group1 img {
+  width: 40px;
+  height: 40px;
+  margin-left: 50px;
+}

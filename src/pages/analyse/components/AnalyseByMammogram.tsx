@@ -10,11 +10,13 @@ import scan from "../../../assets/images/scan.gif";
 import note from "../../../assets/icons/note.svg";
 import { ImageType } from "../../../components/ui/page/types";
 import notify from "../../../utils/notify";
+import { Benign, Malignant } from "./Result";
 
 function AnalyseByMammogram() {
   const [submitting, setSubmitting] = useState(false);
   const [image, setImage] = useState<ImageType | null>(null);
   const [showResult, setShowResult] = useState("");
+  const [report, setReport] = useState("");
   const { register, handleSubmit, formState } = useForm();
 
   const navigate = useNavigate();
@@ -34,7 +36,8 @@ function AnalyseByMammogram() {
       })
         .then((res) => res.json())
         .then(async (resData) => {
-          setShowResult(resData.report);
+          setShowResult(resData.result);
+          setReport(resData.report);
           setSubmitting(false);
         })
         .catch(() => {
@@ -56,11 +59,13 @@ function AnalyseByMammogram() {
         </PopModal>
       )}
       {showResult && (
-        <PopModal>
+        <PopModal scroll>
           <div className="result-modal">
             <img src={note} alt="" />
             <h2>Test Diagnosis</h2>
-            <p>{showResult}</p>
+            <p>{report}</p>
+            {showResult === "Benign" && <Benign />}
+            {showResult === "Malignant" && <Malignant />}
             <Button
               text="Ok"
               type="contained"
