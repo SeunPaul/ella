@@ -10,13 +10,10 @@ function Navigation({ page }: { page: string }) {
   const appData = useContext(AppContext);
   const onLogout = () => {
     if (appData) {
-      const { updateUser, user } = appData;
-      updateUser({ ...user, loggedIn: true });
-      sessionStorage.setItem("access_token", "true");
-
-      navigate("/");
+      const { logout } = appData;
+      logout();
     } else {
-      notify("error", "State Error. Cannot login");
+      notify("error", "State Error. Cannot logout");
     }
   };
 

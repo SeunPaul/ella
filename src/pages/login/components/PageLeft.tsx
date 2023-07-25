@@ -1,4 +1,5 @@
 import { FieldValues, SubmitHandler, useForm } from "react-hook-form";
+import { useNavigate } from "react-router-dom";
 import logo from "../../../assets/icons/logo.svg";
 import FormInput from "../../../components/form/formInput/FormInput";
 import FormButton from "../../../components/form/formButton/FormButton";
@@ -11,9 +12,16 @@ type PropType = {
 function PageLeft({ onLogin, formLoading }: PropType) {
   const { register, formState, handleSubmit } = useForm();
 
+  const navigate = useNavigate();
+
   return (
     <div className="onboarding-page-left">
-      <div className="onboarding-left-section1">
+      <div
+        className="onboarding-left-section1"
+        onClick={() => {
+          navigate("/");
+        }}
+      >
         <img src={logo} alt="" />
         <h1>DigiHealth</h1>
       </div>

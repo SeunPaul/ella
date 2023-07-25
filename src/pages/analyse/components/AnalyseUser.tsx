@@ -1,4 +1,4 @@
-import joseph from "../../../assets/images/joseph.png";
+import joseph from "../../../assets/images/doctor.jpg";
 
 function AnalyseUser() {
   return (

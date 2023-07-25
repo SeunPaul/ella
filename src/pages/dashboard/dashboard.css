@@ -55,6 +55,13 @@
   margin-right: 20px;
 }
 
+.dashboard-user .left img {
+  width: 70px;
+  height: 70px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
 .dashboard-user .right h3 {
   font-weight: 600;
   font-size: var(--mini-heading1);

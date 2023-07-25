@@ -1,13 +1,23 @@
 import { createContext } from "react";
 
 export interface IUser {
-  loading: boolean;
+  id: string;
+  email: string;
+  name: string;
   loggedIn: boolean;
+}
+
+export interface ILogin {
+  id: string;
+  accessToken: string;
+  email: string;
+  name: string;
 }
 
 export type AppContextType = {
   user: IUser;
-  updateUser: (newUser: IUser) => void;
+  login: (data: ILogin) => void;
+  logout: () => void;
 };
 
 export const AppContext = createContext<AppContextType | null>(null);

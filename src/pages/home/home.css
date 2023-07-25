@@ -44,7 +44,9 @@
 }
 
 .home .section-4 img {
+  height: 500px;
   width: 80%;
+  object-fit: cover;
 }
 
 .home .section-5 {

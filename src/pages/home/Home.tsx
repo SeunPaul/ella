@@ -1,7 +1,7 @@
 import Navigation from "../dashboard/components/Navigation";
 import frame from "../../assets/images/frame.png";
-import cancer from "../../assets/images/cancer.png";
-import yoga from "../../assets/images/yoga.png";
+import cancer from "../../assets/images/breast-cancer-banner.jpg";
+import yoga from "../../assets/images/woman-breast-cancer.jpg";
 import unilagLogo from "../../assets/icons/unilag.png";
 import "./home.css";
 

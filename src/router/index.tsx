@@ -78,7 +78,7 @@ function Router() {
               <Route
                 key={route.path}
                 path={route.path}
-                element={<Redirect redirectUrl="/" />}
+                element={<Redirect redirectUrl="/login" />}
               />
             );
           }
